@@ -9,3 +9,15 @@
  	console.log(message.text);
  	
  });
+
+// handles submitting a new message
+var $form = jQuery('#message-form');
+
+$form.on('submit', function(event){
+    event.preventDefault(); // will messagehandle submission ourselves
+    
+    socket.emit('message',{text: $form.find('input[name=message]').val()});
+    
+    //clear the inut box
+    $form.find('input[name=message]').val('');
+});
