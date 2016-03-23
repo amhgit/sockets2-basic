@@ -15,6 +15,7 @@ io.on('connection', function(socket) {
        // send it to everyone but me
        //socket.broadcast.emit('message', message);
        
+       
        // add timestamp
        message.timestamp = moment().valueOf(); //milliseconds
        // send it to everyone and me
