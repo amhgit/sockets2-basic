@@ -14,6 +14,9 @@ console.log(now.valueOf()); // milliseconds
 var timestamp = 1458693773927;
 var timestampmoment = moment.utc(timestamp);
 console.log(timestampmoment.format());
-
+console.log((moment.utc(now.valueOf()).format()));
 //11:06 am
 console.log(timestampmoment.local().format('h:mm a'))
+
+//
+console.log(moment().format('x'));

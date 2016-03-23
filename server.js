@@ -15,12 +15,15 @@ io.on('connection', function(socket) {
        // send it to everyone but me
        //socket.broadcast.emit('message', message);
        
+       // add timestamp
+       message.timestamp = moment().valueOf(); //milliseconds
        // send it to everyone and me
-       io.emit('message', message);
+       io.emit( 'message', message);
    })
     
     socket.emit('message', {
-   	text: 'Welcome to the chat application!'
+   	text: 'Welcome to the chat application!',
+    timestamp: moment().valueOf() 
    });
 });
 
