@@ -21,9 +21,12 @@ socket.on('message', function(message) {
  
  	//jQuery('.messages').append('<p>' + message.text + '</p');
  	//jQuery('.messages').append('<p>' + timestr + '</p');
-    $message = jQuery('.messages');
+    var $messages = jQuery('.messages');
+    var $message = jQuery('<li class="list-group-item"></li>');
+    
     $message.append('<p><strong>' + message.name + ' ' + timestamp.local().format('h:mm a') + '</strong></p>');
-    $message.append('<p>' + message.text + '</p>');     
+    $message.append('<p>' + message.text + '</p>'); 
+    $messages.append($message);
 });
 
 // handles submitting a new message 
